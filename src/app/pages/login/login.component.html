@@ -1,0 +1,42 @@
+<div class="row no-gutters login-page">
+  <div class="col-md-7 col-lg-6 col-sm-12 form-section">
+    <mat-card id="login-form">
+      <mat-card-title class="page-title" style="padding: 0">
+        <h1>Hey There! Welcome back.</h1>
+        <span class="page-subtitle">Enter your sign in details below so you can enjoy this Angular template.</span>
+      </mat-card-title>
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <mat-error>The username and password were not recognized</mat-error>
+        <mat-card-content class="form-content">
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Username</mat-label>
+            <input matInput type="text" formControlName="username" required>
+            <mat-error>Please provide a username</mat-error>
+          </mat-form-field>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password" required>
+            <mat-error>Please provide a valid password</mat-error>
+          </mat-form-field>
+        </mat-card-content>
+        <div class="form-call-to-action" style="">
+          <a href="#" class="link-text">Forgot password?</a>
+          <button mat-raised-button color="primary" class="sign-in-btn" [disabled]="!loginForm.valid">Sign In</button>
+        </div>
+        <div class="register-divider">
+          <hr class="line">
+          <span>Or sign in using</span>
+          <hr class="line">
+        </div>
+        <div class="social-logins row no-gutters">
+          <button type="button" class="col-xs-12 col-sm-4 fb-signin"> Facebook </button>
+          <button type="button" class="col-xs-12 col-sm-4 google-signin"> Google </button>
+          <button type="button" class="col-xs-12 col-sm-4 twitter-signin"> Twitter </button>
+        </div>
+      </form>
+    </mat-card>
+
+
+  </div>
+  <div class="col-md-5 col-lg-6 d-none d-md-block image-section"></div>
+</div>
