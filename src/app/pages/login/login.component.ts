@@ -6,11 +6,8 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatButton} from "@angular/material/button";
 import { RouterLink } from "@angular/router";
-
-interface Credentials {
-  username: string;
-  password: string;
-}
+import { LoginModel } from "../../core/model/login.model";
+import { AuthService } from "../../core/services/auth.service";
 
 @Component({
   selector: 'app-login',
@@ -30,15 +27,32 @@ interface Credentials {
 })
 export class LoginComponent {
 
-  loginForm: FormGroup<ControlsOf<Credentials>>;
+  loginForm: FormGroup<ControlsOf<LoginModel>>;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService
+    ) {
     this.loginForm = this.fb.group({
-      username: this.fb.nonNullable.control('',   [Validators.required]),
+      email: this.fb.nonNullable.control('',   [Validators.required]),
       password: this.fb.nonNullable.control('', [Validators.required, Validators.minLength(8)])
     });
   }
 
-  onLogin() {}
+  onLogin() {
+    if(this.loginForm.valid) {
+
+      const loginModelPartial: Partial<LoginModel> = this.loginForm.value;
+
+      this.authService.signIn(<LoginModel>loginModelPartial).subscribe({
+        next: data => {
+          console.log('On login data ', data)
+        },
+        error: err => {
+          console.log(err.error.message)
+        }
+      })
+    }
+  }
 
 }
