@@ -1,5 +1,5 @@
 #login-form{
-  padding: 30px;
+  box-shadow: 0 0 0;
 }
 .login-page {
   min-height: 100vh;
@@ -17,16 +17,15 @@
 }
 
 .page-title h1 {
-  font-size: var(--rem-10);
+  font-size: var(--rem-9);
 }
 
 .page-subtitle {
   color: var(--page-text-color);
-  font-size: 18px;
+  font-size: 17px;
   font-weight: normal;
 }
 .form-content{
-  margin-top: 40px;
   padding-right: 0;
   padding-left: 0;
 }
@@ -60,6 +59,7 @@
   color: var(--page-text-color);
   display: flex;
   margin: calc(var(--page-spacing) * 2) 0px;
+  font-size: 16px;
 }
 
 .register-divider .line {
@@ -81,22 +81,30 @@ hr {
 .social-logins button:not(:last-child){
   margin-right: var(--page-spacing);
 }
+.fb-signin ,
+.google-signin,
+.twitter-signin{
+  background-color: var(--hex-google-color);
+  border-radius: 6px;
+  border-style: solid;
+  border-width: 1px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: normal;
+  transition: border-color 0.5s, color 0.5s, background-color 0.5s;
+  padding: var(--button-padding);
+}
 .fb-signin{
   --button-background: var(--social-buttons-background);
   --button-border: var(--fb-button-color);
   --button-color: var(--fb-button-color);
   background-color: var(--button-background, rgb(var(--palette-white-rgb)));
   border-color: var(--button-border, rgb(var(--palette-primary-rgb)));
-  border-radius: 6px;
-  border-style: solid;
-  border-width: 1px;
   color: var(--button-color, rgb(var(--palette-primary-rgb)));
-  font-size: 16px;
-  font-weight: 400;
-  letter-spacing: normal;
-  //padding: 6px 12px;
-  transition: border-color 0.5s, color 0.5s, background-color 0.5s;
-  padding: var(--button-padding);
+}
+.fb-signin:hover{
+  color: var(--social-buttons-background);
+  background-color: var(--button-border, rgb(var(--palette-primary-rgb)));
 }
 .google-signin{
   --button-background: var(--social-buttons-background);
@@ -104,16 +112,10 @@ hr {
   --button-color: var(--google-button-color);
   background-color: var(--button-background, rgb(var(--palette-white-rgb)));
   border-color: var(--button-border, rgb(var(--palette-primary-rgb)));
-  border-radius: 6px;
-  border-style: solid;
-  border-width: 1px;
-  color: var(--button-color, rgb(var(--palette-primary-rgb)));
-  font-size: 16px;
-  font-weight: 400;
-  letter-spacing: normal;
-  //padding: 6px 12px;
-  transition: border-color 0.5s, color 0.5s, background-color 0.5s;
-  padding: var(--button-padding);
+}
+.google-signin:hover{
+  color: var(--social-buttons-background);
+  background-color: var(--button-border, rgb(var(--palette-primary-rgb)));
 }
 .twitter-signin{
   --button-background: var(--social-buttons-background);
@@ -121,14 +123,14 @@ hr {
   --button-color: var(--tw-button-color);
   background-color: var(--button-background, rgb(var(--palette-white-rgb)));
   border-color: var(--button-border, rgb(var(--palette-primary-rgb)));
-  border-radius: 6px;
-  border-style: solid;
-  border-width: 1px;
   color: var(--button-color, rgb(var(--palette-primary-rgb)));
-  font-size: 16px;
-  font-weight: 400;
-  letter-spacing: normal;
-  //padding: 6px 12px;
-  transition: border-color 0.5s, color 0.5s, background-color 0.5s;
-  padding: var(--button-padding);
+}
+.twitter-signin:hover{
+  color: var(--social-buttons-background);
+  background-color: var(--button-border, rgb(var(--palette-primary-rgb)));
+}
+.existing-account-section{
+  color: var(--page-text-color);
+  margin-top: calc(var(--page-spacing)* 4);
+  text-align: center;
 }

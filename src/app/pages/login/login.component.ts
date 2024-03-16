@@ -5,6 +5,7 @@ import {MatCard, MatCardContent, MatCardTitle} from "@angular/material/card";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatButton} from "@angular/material/button";
+import { RouterLink } from "@angular/router";
 
 interface Credentials {
   username: string;
@@ -21,7 +22,8 @@ interface Credentials {
     MatCard,
     MatCardTitle,
     MatCardContent,
-    MatButton
+    MatButton,
+    RouterLink
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'

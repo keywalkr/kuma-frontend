@@ -10,7 +10,7 @@
         <mat-card-content class="form-content">
           <mat-form-field class="form-field" appearance="outline">
             <mat-label>Username</mat-label>
-            <input matInput type="text" formControlName="username" required>
+            <input matInput type="text" formControlName="username" style="padding: -15px; margin: 0" required>
             <mat-error>Please provide a username</mat-error>
           </mat-form-field>
           <mat-form-field class="form-field" appearance="outline">
@@ -25,13 +25,17 @@
         </div>
         <div class="register-divider">
           <hr class="line">
-          <span>Or sign in using</span>
+          <span> Or sign in using </span>
           <hr class="line">
         </div>
         <div class="social-logins row no-gutters">
           <button type="button" class="col-xs-12 col-sm-4 fb-signin"> Facebook </button>
           <button type="button" class="col-xs-12 col-sm-4 google-signin"> Google </button>
           <button type="button" class="col-xs-12 col-sm-4 twitter-signin"> Twitter </button>
+        </div>
+        <div class="existing-account-section">
+          <span class="text">Don't have an account? </span>
+          <a href="" routerLink="/user/register" class="link-text">Sign up.</a>
         </div>
       </form>
     </mat-card>

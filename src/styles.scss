@@ -25,3 +25,7 @@ body { margin: 0; font-family: 'Poppins', Roboto, "Helvetica Neue", sans-serif; 
   flex-grow: 1;
   max-width: 100%;
 }
+.col-lg-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
