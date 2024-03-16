@@ -5,9 +5,9 @@ import {MatCard, MatCardContent, MatCardTitle} from "@angular/material/card";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatButton} from "@angular/material/button";
-import { RouterLink } from "@angular/router";
-import { LoginModel } from "../../core/model/login.model";
-import { AuthService } from "../../core/services/auth.service";
+import {RouterLink} from "@angular/router";
+import {LoginModel} from "../../core/model/login.model";
+import {LoginService} from "../../core/services/login.service";
 
 @Component({
   selector: 'app-login',
@@ -31,7 +31,7 @@ export class LoginComponent {
 
   constructor(
     private fb: FormBuilder,
-    private authService: AuthService
+    private loginService: LoginService
     ) {
     this.loginForm = this.fb.group({
       email: this.fb.nonNullable.control('',   [Validators.required]),
@@ -41,17 +41,8 @@ export class LoginComponent {
 
   onLogin() {
     if(this.loginForm.valid) {
-
       const loginModelPartial: Partial<LoginModel> = this.loginForm.value;
-
-      this.authService.signIn(<LoginModel>loginModelPartial).subscribe({
-        next: data => {
-          console.log('On login data ', data)
-        },
-        error: err => {
-          console.log(err.error.message)
-        }
-      })
+      this.loginService.logIn((<LoginModel>loginModelPartial));
     }
   }
 
