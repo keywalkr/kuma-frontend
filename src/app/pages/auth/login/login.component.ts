@@ -1,13 +1,13 @@
 import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {ControlsOf} from '../../utils/type-utils';
+import {ControlsOf} from '../../../utils/type-utils';
 import {MatCard, MatCardContent, MatCardTitle} from "@angular/material/card";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatButton} from "@angular/material/button";
 import {RouterLink} from "@angular/router";
-import {LoginModel} from "../../core/model/login.model";
-import {LoginService} from "../../core/services/login.service";
+import {LoginModel} from "../../../core/model/login.model";
+import {LoginService} from "../../../core/services/login.service";
 
 @Component({
   selector: 'app-login',

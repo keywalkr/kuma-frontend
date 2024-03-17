@@ -4,7 +4,7 @@ import { MatInputModule } from "@angular/material/input";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatCard, MatCardContent, MatCardSubtitle, MatCardTitle } from "@angular/material/card";
 import { MatButton } from "@angular/material/button";
-import { ControlsOf } from "../../utils/type-utils";
+import { ControlsOf } from "../../../utils/type-utils";
 import { RouterLink } from "@angular/router";
 import { MatCheckbox } from "@angular/material/checkbox";
 
