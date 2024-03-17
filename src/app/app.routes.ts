@@ -8,11 +8,11 @@ export const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'user/login',
+    path: 'auth/login',
     component: LoginComponent
   },
   {
-    path: 'user/register',
+    path: 'auth/register',
     component: RegisterComponent
   }
 ];
