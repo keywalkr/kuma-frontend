@@ -5,7 +5,7 @@ import { environment } from "../../../environments/environment";
 import { Observable } from "rxjs";
 import { TokenModel } from "../model/token.model";
 
-const httpOptions = { headers: new HttpHeaders({'Content-Type': 'application/json'})}
+const httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})}
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,8 @@ export class AuthService {
 
   constructor(
     private http: HttpClient
-  ) { }
+  ) {
+  }
 
   postLogin(data: LoginModel): Observable<TokenModel> {
     return this.http.post<TokenModel>(this.authUrl + 'login', data, httpOptions);

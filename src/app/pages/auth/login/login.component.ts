@@ -1,14 +1,14 @@
-import {Component} from '@angular/core';
-import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {ControlsOf} from '../../../utils/type-utils';
-import {MatCard, MatCardContent, MatCardTitle} from "@angular/material/card";
-import {MatFormFieldModule} from "@angular/material/form-field";
-import {MatInputModule} from "@angular/material/input";
-import {MatButton} from "@angular/material/button";
-import {RouterLink} from "@angular/router";
-import {LoginModel} from "../../../core/model/login.model";
-import {LoginService} from "../../../core/services/login.service";
-import {emailValidator} from "../../../shared/validators/email.validator";
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
+import { ControlsOf } from '../../../utils/type-utils';
+import { MatCard, MatCardContent, MatCardTitle } from "@angular/material/card";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
+import { MatButton } from "@angular/material/button";
+import { RouterLink } from "@angular/router";
+import { LoginModel } from "../../../core/model/login.model";
+import { LoginService } from "../../../core/services/login.service";
+import { emailValidator } from "../../../shared/validators/email.validator";
 
 @Component({
   selector: 'app-login',
@@ -45,7 +45,6 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       const loginModelPartial: Partial<LoginModel> = this.loginForm.value;
       this.loginService.logIn((<LoginModel>loginModelPartial));
-      this.loginForm.controls.email.touched
     }
   }
 

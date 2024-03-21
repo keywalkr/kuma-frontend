@@ -1,5 +1,5 @@
-import {Routes} from "@angular/router";
-import {ContentLayoutComponent} from "../layout/content-layout/content-layout.component";
+import { Routes } from "@angular/router";
+import { ContentLayoutComponent } from "../layout/content-layout/content-layout.component";
 
 export const modulesRoutes: Routes = [
   {

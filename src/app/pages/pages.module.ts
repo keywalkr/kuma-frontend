@@ -9,4 +9,5 @@ import { ReactiveFormsModule } from "@angular/forms";
     ReactiveFormsModule
   ]
 })
-export class PagesModule { }
+export class PagesModule {
+}

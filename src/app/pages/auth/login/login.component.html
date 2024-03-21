@@ -12,9 +12,9 @@
             <input matInput type="text" formControlName="email" style="padding: -15px; margin: 0" required>
             <mat-error>
               @if (isControlInvalid('email', 'required')) {
-              Email address is required
+                Email address is required
               } @else if (isControlInvalid('email', 'pattern')) {
-              Invalid email address
+                Invalid email address
               }
             </mat-error>
           </mat-form-field>
@@ -22,12 +22,14 @@
             <mat-label>Password</mat-label>
             <input matInput type="password" formControlName="password" required>
             <mat-error>
-              @if (isControlInvalid('password', 'required')){
+              @if (isControlInvalid('password', 'required')) {
                 Password is required
               }
             </mat-error>
           </mat-form-field>
-          <mat-error> @if (invalidCredentials)  {Invalid credentials} </mat-error>
+          <mat-error> @if (invalidCredentials) {
+            Invalid credentials
+          } </mat-error>
         </mat-card-content>
         <div class="form-call-to-action" style="">
           <a href="#" class="link-text">Forgot password?</a>

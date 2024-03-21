@@ -1,6 +1,6 @@
-import {ApplicationConfig} from "@angular/core";
-import {provideRouter} from "@angular/router";
-import {modulesRoutes} from "./modules.routes";
+import { ApplicationConfig } from "@angular/core";
+import { provideRouter } from "@angular/router";
+import { modulesRoutes } from "./modules.routes";
 
 export const modulesConfig: ApplicationConfig = {
   providers: [provideRouter(modulesRoutes)]

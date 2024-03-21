@@ -1,6 +1,7 @@
-#login-form{
+#login-form {
   box-shadow: 0 0 0;
 }
+
 .login-page {
   min-height: 100vh;
   background-color: white;
@@ -25,10 +26,12 @@
   font-size: 17px;
   font-weight: normal;
 }
-.form-content{
+
+.form-content {
   padding-right: 0;
   padding-left: 0;
 }
+
 .form-field {
   padding-top: 30px;
   width: 100%;
@@ -75,8 +78,9 @@ hr {
   height: 0;
   overflow: visible;
 }
-.signup-form{
-  margin-top: calc(var(--page-spacing)* 4);
+
+.signup-form {
+  margin-top: calc(var(--page-spacing) * 4);
 }
 
 .form-row {
@@ -89,11 +93,13 @@ hr {
   //margin-right: -5px;
   //margin-left: -5px;
 }
-.form-row mat-form-field{
+
+.form-row mat-form-field {
   width: 100%;
 }
-.existing-account-section{
+
+.existing-account-section {
   color: var(--page-text-color);
-  margin-top: calc(var(--page-spacing)* 4);
+  margin-top: calc(var(--page-spacing) * 4);
   text-align: center;
 }

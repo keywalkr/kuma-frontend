@@ -14,7 +14,7 @@ export class JwtTokenService {
   }
 
   setToken(token: string) {
-    if(token){
+    if (token) {
       this.token = token;
     }
   }
@@ -29,7 +29,7 @@ export class JwtTokenService {
    * }
    */
   decodeToken() {
-    if(this.token){
+    if (this.token) {
       console.log("Decode ", jwtDecode(this.token));
       this.decodedToken = jwtDecode(this.token);
     }
@@ -44,7 +44,7 @@ export class JwtTokenService {
    * }
    */
   decodeHeader() {
-    if(this.token) {
+    if (this.token) {
       this.decodedHeader = jwtDecode(this.token, {header: true});
     }
   }

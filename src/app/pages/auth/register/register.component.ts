@@ -38,15 +38,16 @@ export class RegisterComponent {
 
   constructor(private fb: FormBuilder) {
     this.registerForm = this.fb.group({
-      firstname: this.fb.nonNullable.control('',   [Validators.required]),
-      lastname: this.fb.nonNullable.control('',   [Validators.required]),
-      email: this.fb.nonNullable.control('',   [Validators.required, Validators.email]),
-      username: this.fb.nonNullable.control('',   [Validators.required]),
+      firstname: this.fb.nonNullable.control('', [Validators.required]),
+      lastname: this.fb.nonNullable.control('', [Validators.required]),
+      email: this.fb.nonNullable.control('', [Validators.required, Validators.email]),
+      username: this.fb.nonNullable.control('', [Validators.required]),
       password: this.fb.nonNullable.control('', [Validators.required, Validators.minLength(8)]),
       verifyPassword: this.fb.nonNullable.control('', [Validators.required, Validators.minLength(8)]),
       terms: this.fb.nonNullable.control(false, [Validators.requiredTrue])
     });
   }
 
-  onLogin() {}
+  onLogin() {
+  }
 }

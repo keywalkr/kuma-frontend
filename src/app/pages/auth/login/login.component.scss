@@ -1,6 +1,7 @@
-#login-form{
+#login-form {
   box-shadow: 0 0 0;
 }
+
 .login-page {
   min-height: 100vh;
   background-color: white;
@@ -25,10 +26,12 @@
   font-size: 17px;
   font-weight: normal;
 }
-.form-content{
+
+.form-content {
   padding-right: 0;
   padding-left: 0;
 }
+
 .form-field {
   padding-top: 30px;
   width: 100%;
@@ -75,15 +78,18 @@ hr {
   height: 0;
   overflow: visible;
 }
-.social-logins{
+
+.social-logins {
   flex-wrap: nowrap;
 }
-.social-logins button:not(:last-child){
+
+.social-logins button:not(:last-child) {
   margin-right: var(--page-spacing);
 }
-.fb-signin ,
+
+.fb-signin,
 .google-signin,
-.twitter-signin{
+.twitter-signin {
   background-color: var(--hex-google-color);
   border-radius: 6px;
   border-style: solid;
@@ -94,7 +100,8 @@ hr {
   transition: border-color 0.5s, color 0.5s, background-color 0.5s;
   padding: var(--button-padding);
 }
-.fb-signin{
+
+.fb-signin {
   --button-background: var(--social-buttons-background);
   --button-border: var(--fb-button-color);
   --button-color: var(--fb-button-color);
@@ -102,22 +109,26 @@ hr {
   border-color: var(--button-border, rgb(var(--palette-primary-rgb)));
   color: var(--button-color, rgb(var(--palette-primary-rgb)));
 }
-.fb-signin:hover{
+
+.fb-signin:hover {
   color: var(--social-buttons-background);
   background-color: var(--button-border, rgb(var(--palette-primary-rgb)));
 }
-.google-signin{
+
+.google-signin {
   --button-background: var(--social-buttons-background);
   --button-border: var(--google-button-color);
   --button-color: var(--google-button-color);
   background-color: var(--button-background, rgb(var(--palette-white-rgb)));
   border-color: var(--button-border, rgb(var(--palette-primary-rgb)));
 }
-.google-signin:hover{
+
+.google-signin:hover {
   color: var(--social-buttons-background);
   background-color: var(--button-border, rgb(var(--palette-primary-rgb)));
 }
-.twitter-signin{
+
+.twitter-signin {
   --button-background: var(--social-buttons-background);
   --button-border: var(--tw-button-color);
   --button-color: var(--tw-button-color);
@@ -125,12 +136,14 @@ hr {
   border-color: var(--button-border, rgb(var(--palette-primary-rgb)));
   color: var(--button-color, rgb(var(--palette-primary-rgb)));
 }
-.twitter-signin:hover{
+
+.twitter-signin:hover {
   color: var(--social-buttons-background);
   background-color: var(--button-border, rgb(var(--palette-primary-rgb)));
 }
-.existing-account-section{
+
+.existing-account-section {
   color: var(--page-text-color);
-  margin-top: calc(var(--page-spacing)* 4);
+  margin-top: calc(var(--page-spacing) * 4);
   text-align: center;
 }
