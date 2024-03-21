@@ -1,0 +1,194 @@
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.header {
+  height: 5rem;
+  z-index: 1;
+  position: relative;
+  padding: 0 0.9375rem;
+  background: #fff;
+  margin-left: 15.1875rem;
+  transition: all .2s ease;
+}
+
+.header .header-content {
+  height: 100%;
+}
+
+.header-left {
+  float: left;
+  margin-left: 50px;
+  height: 100%;
+}
+
+.header-left .icons {
+  float: left;
+  margin: 0;
+  padding: 0 0.3125rem;
+  position: relative;
+}
+
+.header-left .icons > a {
+  padding: 0 0.3125rem;
+  color: #464a53;
+}
+
+.header-left .input-group {
+  margin-top: 17px;
+}
+
+.header-left .input-group input {
+  border-radius: 5px !important;
+}
+
+.header-left .input-group .input-group-text {
+  font-size: 1.375rem;
+}
+
+.header-left .drop-down {
+  top: 0;
+  height: 100%;
+  box-shadow: none;
+  width: 100%;
+}
+
+.header-left .drop-down form {
+  height: 100%;
+}
+
+.header-left .drop-down input.form-control {
+  height: 100%;
+  border: none;
+}
+
+.header-left .drop-down input.form-control:focus {
+  box-shadow: none;
+}
+
+.header-right {
+  float: right;
+  line-height: 3rem;
+  margin-top: 0;
+  height: 100%;
+}
+
+.header-right ul {
+  height: 100%;
+  margin: 0;
+}
+
+.header-right .icons {
+  float: left;
+  margin: 0;
+  padding: 0 0.3125rem;
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.header-right .icons > a {
+  padding: 0 0.3125rem;
+  color: #464a53;
+}
+
+.header-right .icons .dropdown-profile .badge {
+  top: auto;
+  bottom: auto;
+  left: auto;
+  right: 1.25rem;
+}
+
+.header-right .icons .badge {
+  color: #fff;
+  height: 1.25rem;
+  width: 1.25rem;
+  line-height: 0.875rem;
+  font-size: 0.75rem;
+  position: absolute;
+  right: -2px;
+  top: 2px;
+}
+
+.header-right .icons .user-img {
+  position: relative;
+  top: -7px;
+}
+
+.header-right .icons .user-img img {
+  height: 40px;
+  width: 40px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.header-right .icons .user-img .activity {
+  height: 13px;
+  width: 13px;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  border: 3px solid #fff;
+  bottom: .4rem;
+  right: 0rem;
+  padding: 0;
+  top: auto;
+  left: auto;
+}
+
+.header-right .icons .dropdown-content-heading .badge {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  bottom: auto;
+}
+
+.nav-control {
+  cursor: pointer;
+  position: absolute;
+  left: 1.4375rem;
+  text-align: center;
+  top: 46%;
+  transform: translateY(-50%);
+}
+
+.nav-control .hamburger.active {
+  z-index: -1;
+}
+
+.hamburger {
+  display: inline-block;
+  right: 0;
+  position: relative;
+  top: 0.3125rem;
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+  width: 2.3125rem;
+  z-index: 999;
+}
+
+.hamburger.is-active {
+  left: 0;
+  z-index: 9;
+}
+
+.hamburger .toggle-icon {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: #494949;
+}
+
+.hamburger:hover {
+  cursor: pointer;
+}

@@ -12,9 +12,9 @@
             <input matInput type="text" formControlName="email" style="padding: -15px; margin: 0" required>
             <mat-error>
               @if (isControlInvalid('email', 'required')) {
-                Please provide a username
-              } @else if (isControlInvalid('email', 'email')) {
-                Email is invalid
+              Email address is required
+              } @else if (isControlInvalid('email', 'pattern')) {
+              Invalid email address
               }
             </mat-error>
           </mat-form-field>
@@ -24,8 +24,6 @@
             <mat-error>
               @if (isControlInvalid('password', 'required')){
                 Password is required
-              } @else if (isControlInvalid('password', 'minLength')){
-                Password should be at least 8 characters long
               }
             </mat-error>
           </mat-form-field>

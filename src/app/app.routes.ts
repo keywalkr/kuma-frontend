@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import {Routes} from '@angular/router';
 
 export const routes: Routes = [
   {
@@ -7,6 +7,9 @@ export const routes: Routes = [
     pathMatch: 'full'
   },{
     path: 'auth',
-    loadChildren: () => import('./pages/auth/auth.route').then(auth => auth.routes)
-  },
+    loadChildren: () => import('./pages/auth/auth.routes').then(auth => auth.routes)
+  }, {
+    path: 'content',
+    loadChildren: () => import('./modules/modules.routes').then(mod => mod.modulesRoutes)
+  }
 ];

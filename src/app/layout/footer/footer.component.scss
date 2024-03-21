@@ -1,0 +1,23 @@
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
+.footer {
+  padding-left: 15.1875rem;
+  background-color: #fff;
+}
+
+.footer .copyright {
+  padding: 0.9375rem;
+  background: white;
+}
+
+.footer .copyright p {
+  text-align: center;
+  margin: 0;
+  color: #898989;
+}
+
+.footer .copyright a {
+  color: #7571f9;
+}

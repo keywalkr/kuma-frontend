@@ -1,10 +1,11 @@
-import { Routes } from "@angular/router";
-import { AuthComponent } from "./auth.component";
+import {Routes} from "@angular/router";
+import {AuthLayoutComponent} from "../../layout/auth-layout/auth-layout.component";
+
 
 export const routes: Routes = [
   {
     path: '',
-    component: AuthComponent,
+    component: AuthLayoutComponent,
     children: [
       {
         path: '',

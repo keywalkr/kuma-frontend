@@ -8,6 +8,7 @@ import {MatButton} from "@angular/material/button";
 import {RouterLink} from "@angular/router";
 import {LoginModel} from "../../../core/model/login.model";
 import {LoginService} from "../../../core/services/login.service";
+import {emailValidator} from "../../../shared/validators/email.validator";
 
 @Component({
   selector: 'app-login',
@@ -33,21 +34,22 @@ export class LoginComponent {
   constructor(
     private fb: FormBuilder,
     private loginService: LoginService
-    ) {
+  ) {
     this.loginForm = this.fb.group({
-      email: this.fb.nonNullable.control('',   [Validators.required, Validators.email]),
-      password: this.fb.nonNullable.control('', [Validators.required, Validators.minLength(8)])
+      email: this.fb.nonNullable.control('', [Validators.required, emailValidator()]),
+      password: this.fb.nonNullable.control('', [Validators.required])
     });
   }
 
   onLogin() {
-    if(this.loginForm.valid) {
+    if (this.loginForm.valid) {
       const loginModelPartial: Partial<LoginModel> = this.loginForm.value;
       this.loginService.logIn((<LoginModel>loginModelPartial));
+      this.loginForm.controls.email.touched
     }
   }
 
-  isControlInvalid(control: string, error: string){
+  isControlInvalid(control: string, error: string) {
     return this.loginForm.get(control)?.hasError(error);
   }
 

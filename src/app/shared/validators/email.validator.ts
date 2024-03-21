@@ -1,11 +1,16 @@
-import { AbstractControl, ValidationErrors, ValidatorFn } from "@angular/forms";
+import {AbstractControl, ValidationErrors, ValidatorFn} from "@angular/forms";
 
-const EMAIL_REGEXP =
-  /^(?=.{1,254}$)(?=.{1,64}@)[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-export function EmailValidator(): ValidatorFn {
+const EMAIL_REGEXP = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
+
+export function emailValidator(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
+    const value = control.value;
+    if (!value) {
+      return null;
+    }
 
-    const forbidden = EMAIL_REGEXP.test(control.value);
+    const valid = EMAIL_REGEXP.test(value);
 
-    return forbidden ? { invalidEmail: {value: control.value}} : null; };
+    return !valid ? {pattern: true} : null;
+  }
 }
