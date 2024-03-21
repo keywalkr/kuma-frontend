@@ -27,6 +27,7 @@ import {LoginService} from "../../../core/services/login.service";
 })
 export class LoginComponent {
 
+  invalidCredentials: boolean = false;
   loginForm: FormGroup<ControlsOf<LoginModel>>;
 
   constructor(
@@ -34,7 +35,7 @@ export class LoginComponent {
     private loginService: LoginService
     ) {
     this.loginForm = this.fb.group({
-      email: this.fb.nonNullable.control('',   [Validators.required]),
+      email: this.fb.nonNullable.control('',   [Validators.required, Validators.email]),
       password: this.fb.nonNullable.control('', [Validators.required, Validators.minLength(8)])
     });
   }
@@ -44,6 +45,10 @@ export class LoginComponent {
       const loginModelPartial: Partial<LoginModel> = this.loginForm.value;
       this.loginService.logIn((<LoginModel>loginModelPartial));
     }
+  }
+
+  isControlInvalid(control: string, error: string){
+    return this.loginForm.get(control)?.hasError(error);
   }
 
 }
