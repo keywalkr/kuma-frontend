@@ -1,0 +1,105 @@
+#login-form {
+  box-shadow: 0 0 0;
+}
+
+.login-page {
+  min-height: 100vh;
+  background-color: white;
+}
+
+.login-page .form-section {
+  padding: calc(var(--page-spacing) * 8);
+}
+
+.page-title {
+  color: var(--page-title-color);
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.page-title h1 {
+  font-size: var(--rem-9);
+}
+
+.page-subtitle {
+  color: var(--page-text-color);
+  font-size: 17px;
+  font-weight: normal;
+}
+
+.form-content {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.form-field {
+  padding-top: 30px;
+  width: 100%;
+}
+
+.image-section {
+  background-image: url("/assets/img/auth/signup-image.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.form-call-to-action {
+  display: flex;
+  align-items: baseline;
+  margin-top: calc(var(--page-spacing) * 3);
+}
+
+.link-text {
+  color: var(--link-text-color);
+}
+
+.sign-in-btn {
+  margin-inline-start: auto;
+}
+
+.register-divider {
+  align-items: center;
+  color: var(--page-text-color);
+  display: flex;
+  margin: calc(var(--page-spacing) * 2) 0px;
+  font-size: 16px;
+}
+
+.register-divider .line {
+  flex-grow: 1;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.6);
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+.signup-form {
+  margin-top: calc(var(--page-spacing) * 4);
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 20px;
+  margin-bottom: 10px;
+  //margin-right: -5px;
+  //margin-left: -5px;
+}
+
+.form-row mat-form-field {
+  width: 100%;
+}
+
+.existing-account-section {
+  color: var(--page-text-color);
+  margin-top: calc(var(--page-spacing) * 4);
+  text-align: center;
+}
