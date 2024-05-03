@@ -11,7 +11,6 @@
           </span>
         </div>
       </mat-card-title>
-      <mat-card-subtitle>Mat card subtitle</mat-card-subtitle>
       <form class="signup-form" [formGroup]="registerForm" (ngSubmit)="onLogin()">
         <mat-card-content class="form-content">
           <div class="form-row" style="">
@@ -30,8 +29,13 @@
             <mat-form-field appearance="outline">
               <mat-label>Email</mat-label>
               <input matInput type="text" formControlName="email" required>
-              <mat-error>Email is required</mat-error>
-              <mat-error>Please provide an valid email</mat-error>
+              <mat-error>
+                @if (isControlInvalid('email', 'required')) {
+                  Email address is required
+                } @else if (isControlInvalid('email', 'pattern')) {
+                  Invalid email address
+                }
+              </mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline">
               <mat-label>Username</mat-label>
@@ -44,14 +48,25 @@
             <mat-form-field appearance="outline">
               <mat-label>Password</mat-label>
               <input matInput type="password" formControlName="password" required>
-              <mat-error>Password is required</mat-error>
-              <mat-error>Password muss have at least 8 character</mat-error>
+              <mat-error>
+                @if (isControlInvalid('password', 'required')){
+                  Password is required
+                } @else if (isControlInvalid('password', 'pattern')){
+                  Password should be at least 8 characters long
+                }
+              </mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline">
               <mat-label>Confirm password</mat-label>
               <input matInput type="password" formControlName="verifyPassword" required>
               <mat-error>Verification is required</mat-error>
               <mat-error>Password does not match</mat-error>
+              <mat-error>
+                @if (registerForm.errors?.['match']) {
+                  No match
+                }
+              </mat-error>
+
             </mat-form-field>
           </div>
           <section style="font-size: 13px">

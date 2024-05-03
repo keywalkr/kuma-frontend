@@ -7,6 +7,9 @@ import { MatButton } from "@angular/material/button";
 import { ControlsOf } from "../../../utils/type-utils";
 import { RouterLink } from "@angular/router";
 import { MatCheckbox } from "@angular/material/checkbox";
+import { matchValidator } from "../../../shared/validators/match.validator";
+import { emailValidator } from "../../../shared/validators/email.validator";
+import { PASSWORD_PATTERN } from "../../../shared/validators/validator.constant";
 
 interface RegistrationData {
   firstname: string;
@@ -40,14 +43,25 @@ export class RegisterComponent {
     this.registerForm = this.fb.group({
       firstname: this.fb.nonNullable.control('', [Validators.required]),
       lastname: this.fb.nonNullable.control('', [Validators.required]),
-      email: this.fb.nonNullable.control('', [Validators.required, Validators.email]),
+      email: this.fb.nonNullable.control('', [
+        Validators.required,
+        emailValidator()]),
       username: this.fb.nonNullable.control('', [Validators.required]),
-      password: this.fb.nonNullable.control('', [Validators.required, Validators.minLength(8)]),
-      verifyPassword: this.fb.nonNullable.control('', [Validators.required, Validators.minLength(8)]),
+      password: this.fb.nonNullable.control('', [
+        Validators.required,
+        Validators.pattern(PASSWORD_PATTERN)]),
+      verifyPassword: this.fb.nonNullable.control('', [
+        Validators.required,
+        Validators.minLength(8),
+        matchValidator('password')]),
       terms: this.fb.nonNullable.control(false, [Validators.requiredTrue])
     });
   }
 
   onLogin() {
+  }
+
+  isControlInvalid(control: string, error: string) {
+    return this.registerForm.get(control)?.hasError(error);
   }
 }
